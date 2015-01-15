@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: 661af06b0b86ce94cb1c87dce10a4bbb
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: UISprites_01_0
+    21300002: UISprites_01_1
+    21300004: UISprites_01_2
+    21300006: UISprites_01_3
+    21300008: UISprites_01_4
+    21300010: UISprites_01_5
+    21300012: UISprites_01_6
+    21300014: UISprites_01_7
+    21300016: UISprites_01_8
+    21300018: UISprites_01_9
+    21300020: UISprites_01_10
+    21300022: UISprites_01_11
+    21300024: UISprites_01_12
+    21300026: UISprites_01_13
+    21300028: UISprites_01_14
+    21300030: UISprites_01_15
+    21300032: UISprites_01_16
+    21300034: UISprites_01_17
+    21300036: UISprites_01_18
+    21300038: UISprites_01_19
+    21300040: UISprites_01_20
+    21300042: UISprites_01_21
+    21300044: UISprites_01_22
+    21300046: UISprites_01_23
+    21300048: UISprites_01_24
+    21300050: UISprites_01_25
+    21300052: UISprites_01_26
+    21300054: UISprites_01_27
+    21300056: UISprites_01_28
+    21300058: UISprites_01_29
+    21300060: UISprites_01_30
+    21300062: UISprites_01_31
+    21300064: UISprites_01_32
+    21300066: UISprites_01_33
+    21300068: UISprites_01_34
+    21300070: UISprites_01_35
+    21300072: UISprites_01_36
+    21300074: UISprites_01_37
+    21300076: UISprites_01_38
+    21300078: UISprites_01_39
+    21300080: UISprites_01_40
+    21300082: UISprites_01_41
+    21300084: UISprites_01_42
+    21300086: UISprites_01_43
+    21300088: UISprites_01_44
+    21300090: UISprites_01_45
+    21300092: UISprites_01_46
+    21300094: UISprites_01_47
+    21300096: UISprites_01_48
+    21300098: UISprites_01_49
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: UISprites_01_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 86
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UISprites_01_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 44
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UISprites_01_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 5
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UISprites_01_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 5
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

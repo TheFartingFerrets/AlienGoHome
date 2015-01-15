@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: f5d4399cd680978439cd8d31202c28be
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: UISprites_00_0
+    21300002: UISprites_00_1
+    21300004: UISprites_00_2
+    21300006: UISprites_00_3
+    21300008: UISprites_00_4
+    21300010: UISprites_00_5
+    21300012: UISprites_00_6
+    21300014: UISprites_00_7
+    21300016: UISprites_00_8
+    21300018: UISprites_00_9
+    21300020: UISprites_00_10
+    21300022: UISprites_00_11
+    21300024: UISprites_00_12
+    21300026: UISprites_00_13
+    21300028: UISprites_00_14
+    21300030: UISprites_00_15
+    21300032: UISprites_00_16
+    21300034: UISprites_00_17
+    21300036: UISprites_00_18
+    21300038: UISprites_00_19
+    21300040: UISprites_00_20
+    21300042: UISprites_00_21
+    21300044: UISprites_00_22
+    21300046: UISprites_00_23
+    21300048: UISprites_00_24
+    21300050: UISprites_00_25
+    21300052: UISprites_00_26
+    21300054: UISprites_00_27
+    21300056: UISprites_00_28
+    21300058: UISprites_00_29
+    21300060: UISprites_00_30
+    21300062: UISprites_00_31
+    21300064: UISprites_00_32
+    21300066: UISprites_00_33
+    21300068: UISprites_00_34
+    21300070: UISprites_00_35
+    21300072: UISprites_00_36
+    21300074: UISprites_00_37
+    21300076: UISprites_00_38
+    21300078: UISprites_00_39
+    21300080: UISprites_00_40
+    21300082: UISprites_00_41
+    21300084: UISprites_00_42
+    21300086: UISprites_00_43
+    21300088: UISprites_00_44
+    21300090: UISprites_00_45
+    21300092: UISprites_00_46
+    21300094: UISprites_00_47
+    21300096: UISprites_00_48
+    21300098: UISprites_00_49
+    21300100: UISprites_00_50
+    21300102: UISprites_00_51
+    21300104: UISprites_00_52
+    21300106: UISprites_00_53
+    21300108: UISprites_00_54
+    21300110: UISprites_00_55
+    21300112: UISprites_00_56
+    21300114: UISprites_00_57
+    21300116: UISprites_00_58
+    21300118: UISprites_00_59
+    21300120: UISprites_00_60
+    21300122: UISprites_00_61
+    21300124: UISprites_00_62
+    21300126: UISprites_00_63
+    21300128: UISprites_00_64
+    21300130: UISprites_00_65
+    21300132: UISprites_00_66
+    21300134: UISprites_00_67
+    21300136: UISprites_00_68
+    21300138: UISprites_00_69
+    21300140: UISprites_00_70
+    21300142: UISprites_00_71
+    21300144: UISprites_00_72
+    21300146: UISprites_00_73
+    21300148: UISprites_00_74
+    21300150: UISprites_00_75
+    21300152: UISprites_00_76
+    21300154: UISprites_00_77
+    21300156: UISprites_00_78
+    21300158: UISprites_00_79
+    21300160: UISprites_00_80
+    21300162: UISprites_00_81
+    21300164: UISprites_00_82
+    21300166: UISprites_00_83
+    21300168: UISprites_00_84
+    21300170: UISprites_00_85
+    21300172: UISprites_00_86
+    21300174: UISprites_00_87
+    21300176: UISprites_00_88
+    21300178: UISprites_00_89
+    21300180: UISprites_00_90
+    21300182: UISprites_00_91
+    21300184: UISprites_00_92
+    21300186: UISprites_00_93
+    21300188: UISprites_00_94
+    21300190: UISprites_00_95
+    21300192: UISprites_00_96
+    21300194: UISprites_00_97
+    21300196: UISprites_00_98
+    21300198: UISprites_00_99
+    21300200: UISprites_00_100
+    21300202: UISprites_00_101
+    21300204: UISprites_00_102
+    21300206: UISprites_00_103
+    21300208: UISprites_00_104
+    21300210: UISprites_00_105
+    21300212: UISprites_00_106
+    21300214: UISprites_00_107
+    21300216: UISprites_00_108
+    21300218: UISprites_00_109
+    21300220: UISprites_00_110
+    21300222: UISprites_00_111
+    21300224: UISprites_00_112
+    21300226: UISprites_00_113
+    21300228: UISprites_00_114
+    21300230: UISprites_00_115
+    21300232: UISprites_00_116
+    21300234: UISprites_00_117
+    21300236: UISprites_00_118
+    21300238: UISprites_00_119
+    21300240: UISprites_00_120
+    21300242: UISprites_00_121
+    21300244: UISprites_00_122
+    21300246: UISprites_00_123
+    21300248: UISprites_00_124
+    21300250: UISprites_00_125
+    21300252: UISprites_00_126
+    21300254: UISprites_00_127
+    21300256: UISprites_00_128
+    21300258: UISprites_00_129
+    21300260: UISprites_00_130
+    21300262: UISprites_00_131
+    21300264: UISprites_00_132
+    21300266: UISprites_00_133
+    21300268: UISprites_00_134
+    21300270: UISprites_00_135
+    21300272: UISprites_00_136
+    21300274: UISprites_00_137
+    21300276: UISprites_00_138
+    21300278: UISprites_00_139
+    21300280: UISprites_00_140
+    21300282: UISprites_00_141
+    21300284: UISprites_00_142
+    21300286: UISprites_00_143
+    21300288: UISprites_00_144
+    21300290: UISprites_00_145
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: UISprites_00_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 410
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+    - name: UISprites_00_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 308
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+    - name: UISprites_00_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 206
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+    - name: UISprites_00_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 104
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+    - name: UISprites_00_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+  spritePackingTag: 
+  userData: 

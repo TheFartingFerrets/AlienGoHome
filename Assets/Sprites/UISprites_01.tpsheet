@@ -1,0 +1,14 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: UISprites_01.png (128 x 128)
+# $TexturePacker:SmartUpdate:f76897fbccf76e837092e66f5c742f91:1ada4071cd303bc875e72a76b686e26f:ad7fd56c207dfdd0194e9c03b4873e20$
+#
+
+coinGold;2;86;40;40;0.5;0.575
+coinSilver;2;44;40;40;0.5;0.575
+starGold;2;5;38;37;0.5;0.5675675675675675
+starSilver;42;5;38;37;0.5;0.5675675675675675
