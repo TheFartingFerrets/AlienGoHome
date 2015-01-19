@@ -76,15 +76,11 @@ public class PhysicsControl : MonoBehaviour
         UITimer.StopTimer();
         StopRoller();
 
-
-
         GameObject.Find("CompleteWindow").GetComponent<UIWindowComplete>().ShowComplete(
             _ObjectiveManager._Objective_1.CheckObjective(AssetsInScene),
             _ObjectiveManager._Objective_2.CheckObjective(UITimer.GetTimer()),
             _ObjectiveManager._Objective_3.CheckObjective(BonusCollected)
             );
-
-
     }
 
     public void ResetLevel()

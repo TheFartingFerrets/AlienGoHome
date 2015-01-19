@@ -29,6 +29,9 @@ public class UIWindowComplete : MonoBehaviour
         obj[0].IsComplete = _Statuses[0];
         obj[1].IsComplete = _Statuses[1];
         obj[2].IsComplete = _Statuses[2];
+        
+        AppControl.control.UpdateObjectives(obj[0].IsComplete, obj[1].IsComplete, obj[2].IsComplete);
+
         GetComponent<CanvasGroup>().Show();
     }
     /// <summary>
@@ -43,7 +46,13 @@ public class UIWindowComplete : MonoBehaviour
         obj[0].IsComplete = _Objective0;
         obj[1].IsComplete = _Objective1;
         obj[2].IsComplete = _Objective2;
+
+        AppControl.control.UpdateObjectives(obj[0].IsComplete, obj[1].IsComplete, obj[2].IsComplete);
+
+
         GetComponent<CanvasGroup>().Show();
+        
+
     }
     public void HideComplete()
     {

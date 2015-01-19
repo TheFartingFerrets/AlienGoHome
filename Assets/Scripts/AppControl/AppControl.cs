@@ -29,7 +29,7 @@ public class AppControl : MonoBehaviour
     string[] worlds = {"Main", "Maths", "Physics", "Reflex", "Collect"};
 
     public MainCanvasController MainUIController;
-
+    
     void Awake()
     {
         if( !control )
@@ -40,9 +40,11 @@ public class AppControl : MonoBehaviour
 
         //if(AppState == AppState.WorldSelect)
         MainUIController = GameObject.Find("MainUI").GetComponent<MainCanvasController>();
+        
+        //AppData = Data.Load(AppData);
+        AppData = Data.Load();
 
-        //AppData = Data.LoadDevelopment(AppData);
-        AppData = Data.Load(AppData);
+        MainUIController.transform.GetChild(1).GetComponent<LevelCanvasController>().UpdateUI(AppData);
     }
     void Start()
     {
@@ -53,6 +55,8 @@ public class AppControl : MonoBehaviour
     {
         if( AppState != AppState.Loading || AppState != AppState.Options)
         {
+            if (Input.GetKeyDown(KeyCode.A))
+                AppBack();
             if (Input.GetKeyDown(KeyCode.Escape))
                 AppBack();
             if (Input.GetKeyDown(KeyCode.Menu))
@@ -67,6 +71,7 @@ public class AppControl : MonoBehaviour
     {
         if( AppState == AppState.WorldSelect)
         {
+            Debug.Log("App Quit");
             AppQuit();
         }
         if (AppState == AppState.InLevel)
@@ -83,14 +88,12 @@ public class AppControl : MonoBehaviour
         {
             DeloadWorldLevel();
         }
-        if( AppState == AppState.WorldSelect)
-        {
-            AppQuit();
-        }
     }
     private void AppQuit()
     {
         Debug.Log("App Quit");
+        Data.Save(AppData);
+        Application.Quit();
     }
     public void LoadWorld(int _World)
     {
@@ -145,22 +148,20 @@ public class AppControl : MonoBehaviour
     IEnumerator LoadWorldFromLevel()
     {
         Data.Save(AppData);
-        yield return null;
 
+        yield return null;
         AppState = AppState.Loading;
-        yield return null;
-               
-        //UpdateLevelUI
-
-        yield return null;
-        
-        
         Level = 0;
         Application.LoadLevel(0);
         yield return null;
-        yield return null;
+        
         MainUIController = GameObject.Find("MainUI").GetComponent<MainCanvasController>();
+        MainUIController.transform.GetChild(1).GetComponent<LevelCanvasController>().UpdateUI(AppData);
+        yield return null;
+
+        AppState = AppState.LevelSelect;
         LoadWorld(World);
+        
     }
     /// <summary>
     /// Unlock level by world

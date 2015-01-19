@@ -23,7 +23,7 @@ public class LevelElement : MonoBehaviour
         });
     }
 
-    void SetObjectives( bool _Objective1, bool _Objective2, bool _Objective3)
+    public void SetObjectives( bool _Objective1, bool _Objective2, bool _Objective3)
     {
         ObjectivesElement[0].IsComplete = _Objective1;
         ObjectivesElement[1].IsComplete = _Objective2;

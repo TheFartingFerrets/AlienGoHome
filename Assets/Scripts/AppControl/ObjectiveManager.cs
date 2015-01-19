@@ -6,6 +6,9 @@ public class ObjectiveManager : MonoBehaviour
     public Objective _Objective_1;
     public Objective _Objective_2;
     public Objective _Objective_3;
+
+
+
 }
 
 public enum ObjectiveType
