@@ -17,18 +17,14 @@ public class LevelCanvasController : MonoBehaviour
 
         _World -= 1;
 
-        transform.GetChild(_World).GetComponent<CanvasGroup>().alpha = 1f;
-        transform.GetChild(_World).GetComponent<CanvasGroup>().interactable = true;
-        transform.GetChild(_World).GetComponent<CanvasGroup>().blocksRaycasts = true;
+        transform.GetChild(_World).GetComponent<CanvasGroup>().Show();
     }
 
     public void HideAll()
     {
         foreach (Transform cg in transform)
         {
-            cg.GetComponent<CanvasGroup>().alpha = 0f;
-            cg.GetComponent<CanvasGroup>().interactable = false;
-            cg.GetComponent<CanvasGroup>().blocksRaycasts = false;
+            cg.GetComponent<CanvasGroup>().Hide();
         }
     }
 }

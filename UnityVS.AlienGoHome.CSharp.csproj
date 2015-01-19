@@ -52,18 +52,40 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="TouchScript">
+      <HintPath>Assets\Plugins\TouchScript.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DeleteThis.cs" />
     <Compile Include="Assets\Scripts\AppControl\AppControl.cs" />
     <Compile Include="Assets\Scripts\AppControl\Data.cs" />
     <Compile Include="Assets\Scripts\AppControl\Level.cs" />
-    <Compile Include="Assets\Scripts\AppControl\Objective.cs" />
+    <Compile Include="Assets\Scripts\AppControl\Objective1.cs" />
+    <Compile Include="Assets\Scripts\AppControl\ObjectiveManager.cs" />
     <Compile Include="Assets\Scripts\AppControl\World.cs" />
+    <Compile Include="Assets\Scripts\ExtensionMethods.cs" />
+    <Compile Include="Assets\Scripts\Physics\Assets\PhysicsPortal.cs" />
+    <Compile Include="Assets\Scripts\Physics\Assets\PhysicsSpeedUp.cs" />
+    <Compile Include="Assets\Scripts\Physics\Assets\PhysicsSpring.cs" />
+    <Compile Include="Assets\Scripts\Physics\PhysicsAsset.cs" />
+    <Compile Include="Assets\Scripts\Physics\PhysicsControl.cs" />
+    <Compile Include="Assets\Scripts\Physics\PhysicsDrawAsset.cs" />
+    <Compile Include="Assets\Scripts\Physics\PhysicsEditRotator.cs" />
+    <Compile Include="Assets\Scripts\Physics\PhysicsEditor.cs" />
+    <Compile Include="Assets\Scripts\SimpleDrag.cs" />
     <Compile Include="Assets\Scripts\UIScripts\BestFitOutline.cs" />
     <Compile Include="Assets\Scripts\UIScripts\LevelCanvasController.cs" />
     <Compile Include="Assets\Scripts\UIScripts\LevelElement.cs" />
     <Compile Include="Assets\Scripts\UIScripts\MainCanvasController.cs" />
     <Compile Include="Assets\Scripts\UIScripts\NicerOutline.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\UIExitLevel.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\UIMute.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\UIObjective.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\UIPlayPause.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\UITimer.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\UIWindowComplete.cs" />
+    <Compile Include="Assets\Scripts\UIScripts\UIWindowOptions.cs" />
     <Compile Include="Assets\Scripts\UIScripts\WorldElement.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />

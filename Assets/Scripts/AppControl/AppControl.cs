@@ -17,8 +17,7 @@ public enum AppState
 public class AppControl : MonoBehaviour 
 {
     public static AppControl control;
-    [SerializeField]
-    private AppState AppState = AppState.Loading;
+    public AppState AppState = AppState.Loading;
     [SerializeField]
     private Data AppData = new Data();
 
@@ -39,14 +38,17 @@ public class AppControl : MonoBehaviour
             DontDestroyOnLoad(this);
         }
 
+        //if(AppState == AppState.WorldSelect)
         MainUIController = GameObject.Find("MainUI").GetComponent<MainCanvasController>();
-        AppData = Data.Load();        
+
+        //AppData = Data.LoadDevelopment(AppData);
+        AppData = Data.Load(AppData);
     }
     void Start()
     {
-        DeloadWorldLevel();
+        //if (AppState == AppState.WorldSelect || AppState == AppState.LevelSelect)
+            DeloadWorldLevel();
     }
-
     void Update()
     {
         if( AppState != AppState.Loading || AppState != AppState.Options)
@@ -57,14 +59,22 @@ public class AppControl : MonoBehaviour
                 AppOptions();
         }
     }
-    private void AppOptions()
+    public void AppOptions()
     {
         Debug.Log("Toggle Options");
     }
-    private void AppBack()
+    public void AppBack()
     {
+        if( AppState == AppState.WorldSelect)
+        {
+            AppQuit();
+        }
         if (AppState == AppState.InLevel)
         {
+            ObjectiveManager ObjManager = GameObject.FindGameObjectWithTag("LevelController").GetComponent<ObjectiveManager>();
+
+            UpdateObjectives(ObjManager._Objective_1.GetValue(), ObjManager._Objective_2.GetValue(), ObjManager._Objective_3.GetValue());
+
             StopAllCoroutines();
             StartCoroutine(LoadWorldFromLevel());
             //StartCoroutine(LoadMain());
@@ -73,12 +83,15 @@ public class AppControl : MonoBehaviour
         {
             DeloadWorldLevel();
         }
+        if( AppState == AppState.WorldSelect)
+        {
+            AppQuit();
+        }
     }
     private void AppQuit()
     {
         Debug.Log("App Quit");
     }
-    
     public void LoadWorld(int _World)
     {
         AppState = AppState.LevelSelect;
@@ -98,7 +111,6 @@ public class AppControl : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(LoadLevel(WorldLevel));
     }
-
     /// <summary>
     /// Load Level as Coroutine with level name
     /// </summary>
@@ -130,11 +142,19 @@ public class AppControl : MonoBehaviour
         AppState = AppState.WorldSelect;
         MainUIController = GameObject.Find("MainUI").GetComponent<MainCanvasController>();
     }
-
     IEnumerator LoadWorldFromLevel()
     {
+        Data.Save(AppData);
+        yield return null;
+
         AppState = AppState.Loading;
-        yield return new WaitForSeconds(0.2f);
+        yield return null;
+               
+        //UpdateLevelUI
+
+        yield return null;
+        
+        
         Level = 0;
         Application.LoadLevel(0);
         yield return null;
@@ -152,6 +172,20 @@ public class AppControl : MonoBehaviour
         GetWorld(_World).Levels[_Level].isLocked = false;
     }
     /// <summary>
+    /// Unlock levels by array
+    /// </summary>
+    /// <param name="_World"></param>
+    /// <param name="_Levels"></param>
+    public void UnlockLevels(int _World, int[] _Levels)
+    {
+        int i = 0;
+        while (i < _Levels.Length)
+        {
+            GetWorld(_World).Levels[i].isLocked = false;
+            i++;
+        }
+    }
+    /// <summary>
     /// Lock level by world
     /// </summary>
     /// <param name="_World"></param>
@@ -161,16 +195,103 @@ public class AppControl : MonoBehaviour
         GetWorld(_World).Levels[_Level].isLocked = true;
     }
     /// <summary>
-    /// Update Level Objective
+    /// Lock level by world
+    /// </summary>
+    /// <param name="_World"></param>
+    /// <param name="_Levels"></param>
+    public void LockLevels(int _World, int[] _Levels)
+    {
+        int i = 0;
+        while (i < _Levels.Length)
+        {
+            GetWorld(_World).Levels[i].isLocked = true;
+            i++;
+        }
+    }
+
+    /// <summary>
+    /// Update Objectives for the current World + Level
+    /// </summary>
+    /// <param name="_Objectives"></param>
+    public void UpdateObjectives( bool[] _Objectives)
+    {
+        GetWorld(World).Levels[Level].Objective_1 = _Objectives[0];
+        GetWorld(World).Levels[Level].Objective_2 = _Objectives[1];
+        GetWorld(World).Levels[Level].Objective_3 = _Objectives[2];
+    }
+    public void UpdateObjectives(bool _Objective1, bool _Objective2, bool _Objective3)
+    {
+        GetWorld(World).Levels[Level].Objective_1 = _Objective1;
+        GetWorld(World).Levels[Level].Objective_2 = _Objective2;
+        GetWorld(World).Levels[Level].Objective_3 = _Objective3;
+    }
+    /// <summary>
+    /// Update Objectives for the selected _World + _Level
     /// </summary>
     /// <param name="_World"></param>
     /// <param name="_Level"></param>
-    /// <param name="_Objective"></param>
-    /// <param name="_Status"></param>
-    public void UpdateObjective(int _World, int _Level, int _Objective, bool _Status)
+    /// <param name="_Objectives"></param>
+    public void UpdateObjectives(int _World, int _Level, bool[] _Objectives)
     {
-        GetWorld(_World).Levels[_Level].Objectives[_Objective].IsCompleted = _Status;
+        GetWorld(_World).Levels[_Level].Objective_1 = _Objectives[0];
+        GetWorld(_World).Levels[_Level].Objective_2 = _Objectives[1];
+        GetWorld(_World).Levels[_Level].Objective_3 = _Objectives[2];
     }
+
+
+
+    ///// <summary>
+    ///// Update current world + level objective
+    ///// </summary>
+    ///// <param name="_Objective"></param>
+    ///// <param name="_Status"></param>
+    //public void UpdateObjective(int _Objective, bool _Status)
+    //{
+    //    GetWorld(World).Levels[Level].Objectives[_Objective].IsCompleted = _Status;
+    //}
+    ///// <summary>
+    ///// Update current world + level objective
+    ///// </summary>
+    ///// <param name="_Objective"></param>
+    ///// <param name="_Status"></param>
+    //public void UpdateObjective(int[] _Objectives, bool[] _Status)
+    //{
+    //    int i = 0;
+    //    while( i < _Objectives.Length)
+    //    {
+    //        GetWorld(World).Levels[Level].Objectives[i].IsCompleted = _Status[i];
+    //        i++;
+    //    }
+
+    //}
+    ///// <summary>
+    ///// Update Level Objective
+    ///// </summary>
+    ///// <param name="_World"></param>
+    ///// <param name="_Level"></param>
+    ///// <param name="_Objective"></param>
+    ///// <param name="_Status"></param>
+    //public void UpdateObjective(int _World, int _Level, int _Objective, bool _Status)
+    //{
+    //    GetWorld(_World).Levels[_Level].Objectives[_Objective].IsCompleted = _Status;
+    //}
+    ///// <summary>
+    ///// Update Level Objective
+    ///// </summary>
+    ///// <param name="_World"></param>
+    ///// <param name="_Level"></param>
+    ///// <param name="_Objective"></param>
+    ///// <param name="_Status"></param>
+    //public void UpdateObjective(int _World, int _Level, int[] _Objectives, bool[] _Status)
+    //{
+    //    int i = 0;
+    //    while (i < _Objectives.Length)
+    //    {
+    //        GetWorld(_World).Levels[_Level].Objectives[i].IsCompleted = _Status[i];
+    //        i++;
+    //    }
+    //}
+
     /// <summary>
     /// Return the selected World
     /// </summary>
@@ -186,4 +307,37 @@ public class AppControl : MonoBehaviour
         else
             return AppData.Collect;
     }
+    /// <summary>
+    /// Get Objctive by ObjID
+    /// </summary>
+    /// <param name="_ObjID"></param>
+    /// <returns></returns>
+    //public bool GetObjective(int _ObjID)
+    //{
+    //    return GetWorld(World).Levels[Level].Objectives[_ObjID].IsCompleted;
+    //}
+    ///// <summary>
+    ///// Check objectives, MinItems, MaxItems, TimeToBeat
+    ///// </summary>
+    ///// <param name="_MinItems"></param>
+    ///// <param name="_MaxItems"></param>
+    ///// <param name="_Time"></param>
+    //public void CheckLevelObjectives(int _MinItems, int _MaxItems, float _Time)
+    //{
+    //    bool obj1 = GetWorld(World).Levels[Level].Objectives[0].CheckResult(_MinItems);
+    //    bool obj2 = GetWorld(World).Levels[Level].Objectives[1].CheckResult(_MaxItems);
+    //    bool obj3 = GetWorld(World).Levels[Level].Objectives[2].CheckResult(_Time);
+    //}
+    ///// <summary>
+    ///// Check Objectives, MinItems, MaxItems, Bonus collected
+    ///// </summary>
+    ///// <param name="_MinItems"></param>
+    ///// <param name="_MaxItems"></param>
+    ///// <param name="_Bonus"></param>
+    //public void CheckLevelObjectives(int _MinItems, int _MaxItems, bool _Bonus)
+    //{
+    //    bool obj1 = GetWorld(World).Levels[Level].Objectives[0].CheckResult(_MinItems);
+    //    bool obj2 = GetWorld(World).Levels[Level].Objectives[1].CheckResult(_MaxItems);
+    //    bool obj3 = GetWorld(World).Levels[Level].Objectives[2].CheckResult(_Bonus);
+    //}
 }

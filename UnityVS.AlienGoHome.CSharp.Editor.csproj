@@ -64,8 +64,14 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Messaging">
       <HintPath>Assets\Editor\SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
     </Reference>
+    <Reference Include="TouchScript.Editor">
+      <HintPath>Assets\Editor\TouchScript.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityVS.VersionSpecific">
       <HintPath>Assets\Editor\UnityVS.VersionSpecific.dll</HintPath>
+    </Reference>
+    <Reference Include="TouchScript">
+      <HintPath>Assets\Plugins\TouchScript.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

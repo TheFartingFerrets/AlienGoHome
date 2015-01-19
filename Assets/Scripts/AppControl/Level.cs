@@ -8,6 +8,10 @@ public class Level
     public string Name = "Level";
     [SerializeField]
     public bool isLocked = true;
-    [SerializeField]
-    public Objective[] Objectives = new Objective[3];
+    //[SerializeField]
+    //public Objective[] Objectives = new Objective[3];
+
+    public bool Objective_1 = false;
+    public bool Objective_2 = false;
+    public bool Objective_3 = false;
 }

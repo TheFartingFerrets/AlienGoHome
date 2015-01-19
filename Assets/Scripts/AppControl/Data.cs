@@ -12,10 +12,13 @@ public class Data
     public World Reflex;
     public World Collect;
 
+    public static bool Updated = false;
+
     public static Data Load()
     {
         if (!File.Exists(Path.Combine(Application.persistentDataPath, "data.dat")))
         {
+            Debug.Log("Writing LevelData");
             WriteData();
         }
         BinaryFormatter bf = new BinaryFormatter();
@@ -24,15 +27,17 @@ public class Data
             return (Data)bf.Deserialize(file);
         }
     }
+
     public static void Save( Data _Data)
     {
         BinaryFormatter bf = new BinaryFormatter();
         using (var file = new FileStream(Path.Combine(Application.persistentDataPath, "data.dat"), FileMode.OpenOrCreate))
         {
             bf.Serialize(file, _Data);
+            Updated = true;
         }
     }
-    private static void WriteData()
+    private static void WriteData( )
     {
         BinaryFormatter bf = new BinaryFormatter();
         using (var file = new FileStream(Path.Combine(Application.persistentDataPath, "data.dat"), FileMode.Create))
@@ -40,6 +45,19 @@ public class Data
             Data t = new Data();
             bf.Serialize(file, t);
         }
+    }
+
+    /// <summary>
+    /// Will be removed
+    /// </summary>
+    /// <param name="AppData"></param>
+    /// <returns></returns>
+    public static Data Load(Data AppData)
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+
+        Save(AppData);
+        return Load();
     }
 
 }
