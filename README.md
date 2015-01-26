@@ -15,6 +15,12 @@ AlienGoHome Mobile Game
     LevelObjectiveCompletion:
     A few functions to update the level objective completion
     
+    
+#Level Objectives
+    Physics Levels
+        * Complete the level with full lives
+        * Complete the level in under 10 seconds.
+        * Only use 3 level blocks
 # TODO
 * Create level user interface
 * ~~Create Options menu for audio~~
